@@ -1,19 +1,25 @@
-version: '3'
+version: '3.8'
 
 services:
-  api-solid-pg: 
-    image: bitnami/postgresql
-    ports: 
-      - 5432:5432
-    environment: 
-      - POSTGRESQL_USERNAME=docker
-      - POSTGRESQL_PASSWORD=docker
-      - POSTGRESQL_DATABASE=apisolid
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3364:3364"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgresql://docker:docker@db:5432/apisolid?schema=public"
+      NODE_ENV: dev
+      PORT: 3364
+      HOST: "0.0.0.0"
 
-  api_node: 
-    build: .
-    command: npm run dev
-    ports: 
-      - "3339:3333"
-    volumes:  
-      - .:/usr/app"
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: apisolid
