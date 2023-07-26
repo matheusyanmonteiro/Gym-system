@@ -24,3 +24,8 @@ app.post('/users', async (request, reply ) => {
 
     return reply.status(201).send();
 });
+
+
+app.get('/', (request, reply) => {
+    return reply.status(200).send('backend');
+});

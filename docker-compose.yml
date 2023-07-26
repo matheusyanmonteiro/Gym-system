@@ -14,6 +14,9 @@ services:
       NODE_ENV: dev
       PORT: 3364
       HOST: "0.0.0.0"
+    volumes:
+      - ./src:/usr/app/src  # Bind mount the 'src' directory to the container
+
 
   db:
     image: postgres:latest
