@@ -33,6 +33,8 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-useless-constructor": "off"
+
     }
 }
