@@ -11,4 +11,15 @@ export interface RegisterServiceRequest{
 export interface RegisterServiceResponse {
   user: User
 }
-//--------------------------------------
+//-------------------------------------------
+//----------- authenticate SERVICE ----------
+
+export interface AuthenticateServiceRequest {
+  email: string;
+  password: string;
+}
+
+export interface AuthenticateServiceResponse {
+  user: User
+}
+//-------------------------------------------

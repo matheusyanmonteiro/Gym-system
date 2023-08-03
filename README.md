@@ -4,7 +4,7 @@ Gympass Style app.
 
 ## RFS
 
-- [ ] Should be have to sing out;
+- [x] Should be have to sing out;
 - [ ] Should be have to authenticate;
 - [ ] Should be have to get profile of user sing in;
 - [ ] Should be have to get a number of check-ins realized of user;
@@ -17,7 +17,7 @@ Gympass Style app.
 
 ## RNs
 
-- [ ] the user does not have to be created with a e-mail duplicated;
+- [x] the user does not have to be created with a e-mail duplicated;
 - [ ] the users does not to have to do 2 check-ins in same day;
 - [ ] the user does not to have to do a check-in if it does not closed (100m) to the gym;
 - [ ] the check-in does only be validated after 20 minutes of created;
@@ -26,7 +26,7 @@ Gympass Style app.
 
 ## RNFs
 
-- [ ] the password has to be crypty;
-- [ ] the data has to be persist into database PostgresSQL;
+- [x] the password has to be crypty;
+- [x] the data has to be persist into database PostgresSQL;
 - [ ] every lists of data has to be page of 20 items for page;
 - [ ] the user has to be identificate in one JWT
