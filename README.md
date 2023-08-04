@@ -5,7 +5,7 @@ Gympass Style app.
 ## RFS
 
 - [x] Should be have to sing out;
-- [ ] Should be have to authenticate;
+- [x] Should be have to authenticate;
 - [ ] Should be have to get profile of user sing in;
 - [ ] Should be have to get a number of check-ins realized of user;
 - [ ] Should be have to get a history of check-ins of user;

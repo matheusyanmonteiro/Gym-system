@@ -1,4 +1,4 @@
-import { PrismaUsersRepository } from '@/repositories/prisma/prisma-users-repository';
+import { PrismaUsersRepository } from '@/repositories/prisma/prismaUsers.repository';
 import { AuthenticateServiceRequest, AuthenticateServiceResponse } from '../typings';
 import { InvalidCredentialsError } from './errors/invalidCrendentials.error';
 import { compare } from 'bcryptjs';

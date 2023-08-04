@@ -23,3 +23,11 @@ export interface AuthenticateServiceResponse {
   user: User
 }
 //-------------------------------------------
+//----------- getUserProfile SERVICE --------
+export interface GetUserProfileRequest {
+  userId: string;
+}
+
+export interface GetUserProfileResponse {
+  user: User;
+}

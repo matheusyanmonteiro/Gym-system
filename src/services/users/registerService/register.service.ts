@@ -1,6 +1,6 @@
 import { hash } from 'bcryptjs';
 
-import { IUsersRepository } from '@/repositories/users-repository';
+import { IUsersRepository } from '@/repositories/usersRepository';
 import { UserAlreadyExistsError } from './errors/userAlreadyExists.error';
 import { RegisterServiceRequest, RegisterServiceResponse } from '../typings';
 

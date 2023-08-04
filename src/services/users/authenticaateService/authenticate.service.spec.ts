@@ -1,8 +1,8 @@
-import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository';
 import { expect, describe, it, beforeEach } from 'vitest';
 import { AuthenticateService } from './authentica.service';
 import { hash } from 'bcryptjs';
 import { InvalidCredentialsError } from './errors/invalidCrendentials.error';
+import { InMemoryUsersRepository } from '@/repositories/in-memory/inMemoryUsers.repository';
 
 
 //mock
