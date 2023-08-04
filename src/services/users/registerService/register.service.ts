@@ -1,7 +1,8 @@
 import { hash } from 'bcryptjs';
-import { RegisterServiceRequest, RegisterServiceResponse } from '../typings';
+
 import { IUsersRepository } from '@/repositories/users-repository';
 import { UserAlreadyExistsError } from './errors/user-already-exists-error';
+import { RegisterServiceRequest, RegisterServiceResponse } from '../typings';
 
 
 export class RegisterService {
