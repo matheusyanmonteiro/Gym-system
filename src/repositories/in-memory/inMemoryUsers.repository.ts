@@ -4,8 +4,14 @@ import { IUsersRepository } from '../usersRepository';
 export class InMemoryUsersRepository implements IUsersRepository {
     public items: User[] = [];
     
-    findById(id: string): Promise<User | null> {
-        throw new Error('Method not implemented.');
+    async findById(id: string) {
+        const user = this.items.find((item) => item.id === id);
+
+        if (!user) {
+            return null;
+        }
+
+        return user;
     }
 
     async findByEmail(email: string) {
