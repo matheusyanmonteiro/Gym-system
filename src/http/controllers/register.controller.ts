@@ -1,8 +1,9 @@
 
+import { MakeRegisterService } from '@/services/factories/users/makeRegisterService.factory';
+import { UserAlreadyExistsError } from '@/services/users/registerService/errors/userAlreadyExists.error';
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { z } from 'zod';
-import { MakeRegisterService } from '@/services/factories/users/make.register.service.factory';
-import { UserAlreadyExistsError } from '@/services/users/registerService/errors/user-already-exists-error';
+
 
 
 export async function registerController (request:FastifyRequest, reply:FastifyReply )  {

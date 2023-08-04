@@ -1,8 +1,7 @@
+import { makeAuthenticateService } from '@/services/factories/users/makeAuthenticateService.factory';
+import { InvalidCredentialsError } from '@/services/users/authenticaateService/errors/invalidCrendentials.error';
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { z } from 'zod';
-
-import { InvalidCredentialsError } from '@/services/users/authenticaateService/errors/invalid-crendentials-error';
-import { makeAuthenticateService } from '@/services/factories/users/make.authenticate.service.factory';
 
 
 

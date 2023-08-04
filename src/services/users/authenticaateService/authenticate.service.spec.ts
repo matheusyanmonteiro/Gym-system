@@ -2,7 +2,7 @@ import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-user
 import { expect, describe, it, beforeEach } from 'vitest';
 import { AuthenticateService } from './authentica.service';
 import { hash } from 'bcryptjs';
-import { InvalidCredentialsError } from './errors/invalid-crendentials-error';
+import { InvalidCredentialsError } from './errors/invalidCrendentials.error';
 
 
 //mock
