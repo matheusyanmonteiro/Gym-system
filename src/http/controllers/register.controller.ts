@@ -1,5 +1,5 @@
 
-import { MakeRegisterService } from '@/services/factories/users/makeRegisterService.factory';
+import { MakeRegisterService } from '@/factories/users/makeRegisterService.factory';
 import { UserAlreadyExistsError } from '@/services/users/registerService/errors/userAlreadyExists.error';
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { z } from 'zod';

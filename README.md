@@ -6,7 +6,7 @@ Gympass Style app.
 
 - [x] Should be have to sing out;
 - [x] Should be have to authenticate;
-- [ ] Should be have to get profile of user sing in;
+- [x] Should be have to get profile of user sing in;
 - [ ] Should be have to get a number of check-ins realized of user;
 - [ ] Should be have to get a history of check-ins of user;
 - [ ] Should be have to search the most closer gyms;
