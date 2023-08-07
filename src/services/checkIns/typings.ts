@@ -2,11 +2,11 @@
 
 import { CheckIn } from '@prisma/client';
 
-export interface CheckInRequest {
+export interface CheckInServiceRequest {
   userId: string;
   gymId: string;
 }
 
-export interface CheckInResponse {
+export interface CheckInServiceResponse {
   checkIn: CheckIn;
 }

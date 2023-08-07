@@ -29,7 +29,7 @@ describe('Get User Profile Service', () => {
     });
 
     it('should not be able to get user profile with wrong id', async () => {
-        expect(() => systemUnderTest.handle({
+        await expect(() => systemUnderTest.handle({
             userId: 'non-existing-id',
         }),
         ).rejects.toBeInstanceOf(ResourceNotFoundError);

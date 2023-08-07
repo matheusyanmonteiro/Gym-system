@@ -1,10 +1,22 @@
-import { describe, expect, it } from 'vitest';
+import { InMemoryCheckInsRepositorye } from '@/repositories/in-memory/inMemoryCheckIns.repository';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { CheckInService } from './checkIn.service';
 
+let checkInsRepository: InMemoryCheckInsRepositorye;
+let systemUnderTest: CheckInService;
 
-describe('Get a test for not result', () => {
-    it ('should be return a number 200'), async() => {
-        const someNumber = 200;
+describe('Check In Service', () => {
+    beforeEach(() => {
+        checkInsRepository = new InMemoryCheckInsRepositorye();
+        systemUnderTest = new CheckInService(checkInsRepository);
+    });
 
-        expect(someNumber).toEqual(200);
+    it ('should be able to check in'), async() => {
+        const { checkIn } = await systemUnderTest.handle({
+            gymId: 'gym_id',
+            userId: 'user-id'
+        });
+
+        expect(checkIn.id).toEqual(expect.any(String));
     };
 });

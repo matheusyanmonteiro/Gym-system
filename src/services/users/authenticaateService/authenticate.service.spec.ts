@@ -34,7 +34,7 @@ describe('Authenticate Service', () => {
     });
     
     it('should not be able to authenticate with wrong email', async () => {
-        expect(() =>  systemUnderTest.handle({
+        await expect(() =>  systemUnderTest.handle({
             email: 'johndoe@example.com',
             password: '123456'
         }),
@@ -51,7 +51,7 @@ describe('Authenticate Service', () => {
         });
 
 
-        expect(() =>  systemUnderTest.handle({
+        await expect(() =>  systemUnderTest.handle({
             email: 'johndoe@example.com',
             password: '123123'
         }),
