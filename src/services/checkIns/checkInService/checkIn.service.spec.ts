@@ -1,16 +1,16 @@
-import { InMemoryCheckInsRepositorye } from '@/repositories/in-memory/inMemoryCheckIns.repository';
+import { InMemoryCheckInsRepository } from '@/repositories/in-memory/inMemoryCheckIns.repository';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { CheckInService } from './checkIn.service';
 import { InMemoryGymsRepository } from '@/repositories/in-memory/inMemoryGyms.repository';
 import { Decimal } from '@prisma/client/runtime/library';
 
-let checkInsRepository: InMemoryCheckInsRepositorye;
+let checkInsRepository: InMemoryCheckInsRepository;
 let gymsRepository: InMemoryGymsRepository;
 let systemUnderTest: CheckInService;
 
 describe('Check In Service', () => {
     beforeEach(() => {
-        checkInsRepository = new InMemoryCheckInsRepositorye();
+        checkInsRepository = new InMemoryCheckInsRepository();
         gymsRepository = new InMemoryGymsRepository();
         systemUnderTest = new CheckInService(checkInsRepository, gymsRepository);
 

@@ -2,11 +2,11 @@ import { hash } from 'bcryptjs';
 
 import { UserAlreadyExistsError } from './errors/userAlreadyExists.error';
 import { RegisterServiceRequest, RegisterServiceResponse } from '../typings';
-import { IUsersRepository } from '@/repositories/users.repository';
+import { UsersRepositoryContract } from '@/repositories/users.repository';
 
 
 export class RegisterService {
-    constructor(private usersRepository: IUsersRepository) {}
+    constructor(private usersRepository: UsersRepositoryContract) {}
 
     async handle({
         name,

@@ -1,5 +1,5 @@
 import { Gym } from '@prisma/client';
 
-export interface GymsRepository {
+export interface GymsRepositoryContract {
   findById(id: string): Promise<Gym | null>;
 }

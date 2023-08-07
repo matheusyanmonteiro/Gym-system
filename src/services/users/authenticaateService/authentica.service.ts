@@ -1,11 +1,11 @@
-import { PrismaUsersRepository } from '@/repositories/prisma/prismaUsers.repository';
+import { UsersRepositoryContract } from '@/repositories/users.repository';
 import { AuthenticateServiceRequest, AuthenticateServiceResponse } from '../typings';
 import { InvalidCredentialsError } from './errors/invalidCrendentials.error';
 import { compare } from 'bcryptjs';
 
 export class AuthenticateService {
     constructor (
-    private usersRepository: PrismaUsersRepository
+    private usersRepository: UsersRepositoryContract
     ) {}
 
     async handle({email, password}: AuthenticateServiceRequest): Promise<AuthenticateServiceResponse> {

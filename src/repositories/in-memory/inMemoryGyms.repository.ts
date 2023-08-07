@@ -1,7 +1,7 @@
 import { Gym } from '@prisma/client';
-import { GymsRepository } from '../gyms.repository';
+import { GymsRepositoryContract } from '../gyms.repository';
 
-export class InMemoryGymsRepository implements GymsRepository {
+export class InMemoryGymsRepository implements GymsRepositoryContract {
     public items: Gym[] = [];
 
     async findById(id: string){
