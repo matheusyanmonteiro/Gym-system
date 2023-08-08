@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { CheckInService } from './checkIn.service';
 import { InMemoryGymsRepository } from '@/repositories/in-memory/inMemoryGyms.repository';
 import { Decimal } from '@prisma/client/runtime/library';
+import { number } from 'zod';
 
 let checkInsRepository: InMemoryCheckInsRepository;
 let gymsRepository: InMemoryGymsRepository;
@@ -33,17 +34,17 @@ describe('Check In Service', () => {
         vi.useRealTimers();
     });
 
-    it('should be able to check in'), async() => {
+    it('should be able to check in', async () => {
         const { checkIn } = await systemUnderTest.handle({
             gymId: 'gym_01',
-            userId: 'user-id',
+            userId: 'user-01',
             userLatitude: 0,
             userLongitude: 0
-
+    
         });
-
+    
         expect(checkIn.id).toEqual(expect.any(String));
-    };
+    });
 
     it('should not be able to check in twice in the same day', async () => {
         vi.setSystemTime(new Date(2023, 0, 20, 8, 0, 0));
@@ -87,4 +88,25 @@ describe('Check In Service', () => {
 
         expect(checkIn.id).toEqual(expect.any(String));
     });
+
+    it('should not be able to check in on distant gym', async () => {
+        gymsRepository.items.push({
+            id: 'gym-02',
+            title: 'Types_gym',
+            description: '' ,
+            phone: '',
+            latitude: new Decimal(-15.9307762),
+            longitude: new Decimal(-48.0391709)
+        });
+        
+        await expect(() => 
+            systemUnderTest.handle({
+                gymId: 'gym-02',
+                userId: 'user-01',
+                userLatitude: -15.9400957,
+                userLongitude: -48.0360534,
+            }),
+        ).rejects.toBeInstanceOf(Error);
+    });
+
 });

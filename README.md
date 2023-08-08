@@ -19,7 +19,7 @@ Gympass Style app.
 
 - [x] the user does not have to be created with a e-mail duplicated;
 - [x] the users does not to have to do 2 check-ins in same day;
-- [ ] the user does not to have to do a check-in if it does not closed (100m) to the gym;
+- [X] the user does not to have to do a check-in if it does not closed (100m) to the gym;
 - [ ] the check-in does only be validated after 20 minutes of created;
 - [ ] the check-in does only be validated for one admin;
 - [ ] the gym only be created for one admin;

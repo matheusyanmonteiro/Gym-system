@@ -1,11 +1,10 @@
-import { compare } from 'bcryptjs';
-import { PrismaUsersRepository } from '@/repositories/prisma/prismaUsers.repository';
+import { UsersRepositoryContract } from '@/repositories/users.repository';
 import { GetUserProfileRequest, GetUserProfileResponse } from '../typings';
 import { ResourceNotFoundError } from '@/errors/resourceNotFound.error';
 
 export class GetUserProfileService {
     constructor (
-    private usersRepository: PrismaUsersRepository
+    private usersRepository: UsersRepositoryContract
     ) {}
 
     async handle({userId}: GetUserProfileRequest): Promise<GetUserProfileResponse> {
