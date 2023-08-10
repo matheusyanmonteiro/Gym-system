@@ -13,7 +13,7 @@ Gympass Style app.
 - [ ] Should be have to search the name gyms;
 - [x] Should be have to realized check-in in the gym;
 - [ ] Should be have to validated user after the check-in;
-- [ ] Should be have to create a gym;
+- [x] Should be have to create a gym;
 
 ## RNs
 

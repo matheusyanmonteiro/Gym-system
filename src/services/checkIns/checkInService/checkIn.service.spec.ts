@@ -3,26 +3,26 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { CheckInService } from './checkIn.service';
 import { InMemoryGymsRepository } from '@/repositories/in-memory/inMemoryGyms.repository';
 import { Decimal } from '@prisma/client/runtime/library';
-import { number } from 'zod';
+import { MaxDistanceError } from './errors/maxDistance.error';
+import { MaxNumberOfCheckInsError } from './errors/maxNumberOfCheckins.error';
 
 let checkInsRepository: InMemoryCheckInsRepository;
 let gymsRepository: InMemoryGymsRepository;
 let systemUnderTest: CheckInService;
 
 describe('Check In Service', () => {
-    beforeEach(() => {
+    beforeEach(async () => {
         checkInsRepository = new InMemoryCheckInsRepository();
         gymsRepository = new InMemoryGymsRepository();
         systemUnderTest = new CheckInService(checkInsRepository, gymsRepository);
 
-        // lazy entry for entity because i'm tired 
-        gymsRepository.items.push({
+        await gymsRepository.create({
             id:'gym_01',
             title: 'types_gym',
             description: '',
             phone: '',
-            latitude: new Decimal(0),
-            longitude: new Decimal(0)
+            latitude: 0,
+            longitude: 0
         });
         
         
@@ -64,7 +64,7 @@ describe('Check In Service', () => {
                 userLatitude: 0,
                 userLongitude: 0
             }),
-        ).rejects.toBeInstanceOf(Error);
+        ).rejects.toBeInstanceOf(MaxNumberOfCheckInsError);
     });
 
     it('should be able to check in twice but in different days', async () => {
@@ -106,7 +106,7 @@ describe('Check In Service', () => {
                 userLatitude: -15.9400957,
                 userLongitude: -48.0360534,
             }),
-        ).rejects.toBeInstanceOf(Error);
+        ).rejects.toBeInstanceOf(MaxDistanceError);
     });
 
 });
