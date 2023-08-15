@@ -1,5 +1,5 @@
 import { InMemoryGymsRepository } from '@/repositories/in-memory/inMemoryGyms.repository';
-import { CreateGymService } from './createGym.serivce';
+import { CreateGymService } from './createGym.service';
 import { describe, expect, it, beforeEach } from 'vitest';
 
 let gymsRepository: InMemoryGymsRepository;
