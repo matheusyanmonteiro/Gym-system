@@ -20,3 +20,13 @@ export interface SearchGymsServiceRequest {
 export interface SearchGymsServiceResponse {
   gyms: Gym[]
 }
+//------------------------------------------------------------------------------
+
+export interface FetchNearbyGymsServiceRequest {
+  userLatitude: number,
+  userLongitude: number,
+}
+
+export interface FetchNearbyGymsServiceResponse {
+  gyms: Gym[]
+}

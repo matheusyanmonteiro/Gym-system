@@ -9,7 +9,7 @@ Gympass Style app.
 - [x] Should be have to get profile of user sing in;
 - [x] Should be have to get a number of check-ins realized of user;
 - [x] Should be have to get a history of check-ins of user;
-- [ ] Should be have to search the most closer gyms;
+- [x] Should be have to search the most closer gyms (until 10km);
 - [x] Should be have to search the name gyms;
 - [x] Should be have to realized check-in in the gym;
 - [ ] Should be have to validated user after the check-in;
