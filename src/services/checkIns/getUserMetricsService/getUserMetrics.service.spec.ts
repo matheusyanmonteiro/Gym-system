@@ -6,15 +6,25 @@ import { GetUserMetricsService } from './getUserMetrics.service';
 let checkInsRepository: InMemoryCheckInsRepository;
 let systemUnderTest: GetUserMetricsService;
 
-describe('Fetch User Check-In History Service', () => {
+describe('Get User Metrics Service', () => {
     beforeEach(async () => {
         checkInsRepository = new InMemoryCheckInsRepository();
         systemUnderTest = new GetUserMetricsService(checkInsRepository);
     });
 
+    it('should be able to get check-ins count from metrics', async () => {
+        for(let i = 1; i <= 10; i++){
+            await checkInsRepository.create({
+                gym_id: `gym_${i}`,
+                user_id: 'user_01'
+            });
+        }
 
-    it('should be able to fetch check-in history', async () => {
-        console.log('hello world');
+        const { checkInsCount } = await systemUnderTest.handle({
+            userId: 'user_01'
+        });
+
+        expect(checkInsCount).toEqual(10);
     });
 
 });

@@ -29,9 +29,9 @@ export interface FetchUserCheckInsHistoryServiceResponse {
 //----------- Get User Metrics Service ------------------
 
 export interface GetUserMetricsServiceRequest {
-  userId: string
+  userId: string;
 }
 
 export interface GetUserMetricsServiceResponse {
-  checkIns: CheckIn[];
+  checkInsCount: number;
 }

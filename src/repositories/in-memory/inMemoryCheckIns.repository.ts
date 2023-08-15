@@ -4,7 +4,6 @@ import { CheckInsRepositoryContract } from '../checkIns.repository';
 import { randomUUID } from 'node:crypto';
 
 export class InMemoryCheckInsRepository implements CheckInsRepositoryContract {
-    
     public items: CheckIn[] = [];
 
     async create(data: Prisma.CheckInUncheckedCreateInput) {
@@ -45,6 +44,9 @@ export class InMemoryCheckInsRepository implements CheckInsRepositoryContract {
             .filter(item => item.user_id === userId)
             .slice((page - 1) * 20, page * 20);
     }
-   
 
+    async countByUserId(userId: string): Promise<number> {
+        return this.items.filter(item => item.user_id === userId).length;
+    }
+   
 }

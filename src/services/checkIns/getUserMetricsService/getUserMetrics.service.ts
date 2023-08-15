@@ -5,6 +5,10 @@ export class GetUserMetricsService {
     constructor(private CheckInsRepository: CheckInsRepositoryContract) {}
 
     async handle({ userId }: GetUserMetricsServiceRequest): Promise<GetUserMetricsServiceResponse> {
-        throw new Error('does not implements');
+        const checkInsCount = await this.CheckInsRepository.countByUserId(userId);
+
+        return {
+            checkInsCount,
+        };
     }
 }
