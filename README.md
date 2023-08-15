@@ -7,8 +7,8 @@ Gympass Style app.
 - [x] Should be have to sing out;
 - [x] Should be have to authenticate;
 - [x] Should be have to get profile of user sing in;
-- [ ] Should be have to get a number of check-ins realized of user;
-- [ ] Should be have to get a history of check-ins of user;
+- [x] Should be have to get a number of check-ins realized of user;
+- [x] Should be have to get a history of check-ins of user;
 - [ ] Should be have to search the most closer gyms;
 - [ ] Should be have to search the name gyms;
 - [x] Should be have to realized check-in in the gym;
@@ -28,5 +28,5 @@ Gympass Style app.
 
 - [x] the password has to be crypty;
 - [x] the data has to be persist into database PostgresSQL;
-- [ ] every lists of data has to be page of 20 items for page;
+- [x] every lists of data has to be page of 20 items for page;
 - [ ] the user has to be identificate in one JWT

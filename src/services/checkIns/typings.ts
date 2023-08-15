@@ -12,3 +12,26 @@ export interface CheckInServiceRequest {
 export interface CheckInServiceResponse {
   checkIn: CheckIn;
 }
+
+//----------- Fetch User Check Ins History Service -----------
+
+export interface FetchUserCheckInsHistoryServiceRequest {
+  userId:string;
+  page: number;
+}
+
+export interface FetchUserCheckInsHistoryServiceResponse {
+  checkIns: CheckIn[];
+}
+
+
+
+//----------- Get User Metrics Service ------------------
+
+export interface GetUserMetricsServiceRequest {
+  userId: string
+}
+
+export interface GetUserMetricsServiceResponse {
+  checkIns: CheckIn[];
+}
