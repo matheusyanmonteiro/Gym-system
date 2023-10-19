@@ -35,3 +35,13 @@ export interface GetUserMetricsServiceRequest {
 export interface GetUserMetricsServiceResponse {
   checkInsCount: number;
 }
+
+//------------------- Valide Check Ins--------------------
+
+export interface ValidateCheckInUseCaseServiceRequest {
+  checkInId: string;
+}
+
+export interface ValidateCheckInServiceResponse {
+  checkIn: CheckIn;
+}
