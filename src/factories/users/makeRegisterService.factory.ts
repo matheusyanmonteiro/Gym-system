@@ -3,7 +3,7 @@ import { RegisterService } from '@/services/users/registerService/register.servi
 
 export function MakeRegisterService() {
     const prismaUsersRepository = new PrismaUsersRepository();
-    const registerService = new RegisterService(prismaUsersRepository);
+    const service = new RegisterService(prismaUsersRepository);
 
-    return registerService;
+    return service;
 }
