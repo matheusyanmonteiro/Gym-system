@@ -12,7 +12,7 @@ Gympass Style app.
 - [x] Should be have to search the most closer gyms (until 10km);
 - [x] Should be have to search the name gyms;
 - [x] Should be have to realized check-in in the gym;
-- [ ] Should be have to validated user after the check-in;
+- [x] Should be have to validated user after the check-in;
 - [x] Should be have to create a gym;
 
 ## RNs
@@ -29,4 +29,4 @@ Gympass Style app.
 - [x] the password has to be crypty;
 - [x] the data has to be persist into database PostgresSQL;
 - [x] every lists of data has to be page of 20 items for page;
-- [ ] the user has to be identificate in one JWT
+- [x] the user has to be identificate in one JWT
