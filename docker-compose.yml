@@ -5,19 +5,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment: 
+      DATABASE_URL: postgres://docker:docker@db:5432/apisolid
     ports:
       - "3364:3364"
     depends_on:
       - db
-    environment:
-      DATABASE_URL: "postgresql://docker:docker@db:5432/apisolid?schema=public"
-      NODE_ENV: dev
-      PORT: 3364
-      HOST: "0.0.0.0"
     volumes:
       - ./src:/usr/app/src  # Bind mount the 'src' directory to the container
-
-
+      
   db:
     image: postgres:latest
     ports:
@@ -26,3 +22,4 @@ services:
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
       POSTGRES_DB: apisolid
+      
