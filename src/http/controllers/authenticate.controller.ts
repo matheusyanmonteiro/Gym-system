@@ -1,5 +1,5 @@
 import { makeAuthenticateService } from '@/factories/users/makeAuthenticateService.factory';
-import { InvalidCredentialsError } from '@/services/users/authenticaateService/errors/invalidCrendentials.error';
+import { InvalidCredentialsError } from '@/services/users/authenticateService/errors/invalidCrendentials.error';
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { z } from 'zod';
 
@@ -16,11 +16,18 @@ export async function authenticateController (request:FastifyRequest, reply:Fast
     try {
         const authenticateService = makeAuthenticateService();
         
-        await authenticateService.handle({
+        const { user } =  await authenticateService.handle({
             email,
             password
         });
 
+        const token = await reply.jwtSign({}, {
+            sign: {sub: user.id}
+        });
+
+        return reply.status(200).send({
+            token,
+        });
     } catch (err) {
         if (err instanceof InvalidCredentialsError) {
             return reply.status(400).send({message: err.message});
@@ -28,6 +35,4 @@ export async function authenticateController (request:FastifyRequest, reply:Fast
 
         throw err;
     }
-
-    return reply.status(200).send();
 }   

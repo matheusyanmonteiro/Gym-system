@@ -1,5 +1,5 @@
 import { expect, describe, it, beforeEach } from 'vitest';
-import { AuthenticateService } from './authentica.service';
+import { AuthenticateService } from './authenticate.service';
 import { hash } from 'bcryptjs';
 import { InvalidCredentialsError } from './errors/invalidCrendentials.error';
 import { InMemoryUsersRepository } from '@/repositories/in-memory/inMemoryUsers.repository';
