@@ -1,5 +1,3 @@
-//----------- Check In SERVICE --------------
-
 import { CheckIn } from '@prisma/client';
 
 export interface CheckInServiceRequest {
@@ -13,8 +11,6 @@ export interface CheckInServiceResponse {
   checkIn: CheckIn;
 }
 
-//----------- Fetch User Check Ins History Service -----------
-
 export interface FetchUserCheckInsHistoryServiceRequest {
   userId:string;
   page: number;
@@ -24,10 +20,6 @@ export interface FetchUserCheckInsHistoryServiceResponse {
   checkIns: CheckIn[];
 }
 
-
-
-//----------- Get User Metrics Service ------------------
-
 export interface GetUserMetricsServiceRequest {
   userId: string;
 }
@@ -35,8 +27,6 @@ export interface GetUserMetricsServiceRequest {
 export interface GetUserMetricsServiceResponse {
   checkInsCount: number;
 }
-
-//------------------- Valide Check Ins--------------------
 
 export interface ValidateCheckInUseCaseServiceRequest {
   checkInId: string;

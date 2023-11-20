@@ -11,7 +11,7 @@ export interface CreateGymServiceRequest {
 export interface CreateGymServiceResponse {
   gym: Gym
 }
-//------------------------------------------------------------------------------
+
 export interface SearchGymsServiceRequest {
   query: string;
   page: number;
@@ -20,7 +20,6 @@ export interface SearchGymsServiceRequest {
 export interface SearchGymsServiceResponse {
   gyms: Gym[]
 }
-//------------------------------------------------------------------------------
 
 export interface FetchNearbyGymsServiceRequest {
   userLatitude: number,
