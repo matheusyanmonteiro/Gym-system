@@ -7,9 +7,11 @@ This project it was designed for run into a Docker container. But if you want to
 1. Install postgress in your computer.
 2. Config the envs using ```.env.example```.
 3. run the command ```npx prisma migrate dev```.
-    3.1. If you don't have the prisma folder run ```npx prisma generate```.
+    - 3.1.  If you don't have the prisma folder run ```npx prisma generate```.
 4. install the node_modules ```npm i | npm install | yarn (not recommend )```.
 5. run the command ```npm run dev-local```.
+
+
 
 The correct way to start this project is ```docker compose up --build | docker-compose up --buld```
 
