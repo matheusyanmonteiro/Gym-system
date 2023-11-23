@@ -1,32 +1,23 @@
-# App
+# Welcome to the api (back-end) of a generic gymPass.
 
-Gympass Style app.
+## running local:
 
-## RFS
+This project it was designed for run into a Docker container. But if you want to run local you have to do this steps
 
-- [x] Should be have to sing out;
-- [x] Should be have to authenticate;
-- [x] Should be have to get profile of user sing in;
-- [x] Should be have to get a number of check-ins realized of user;
-- [x] Should be have to get a history of check-ins of user;
-- [x] Should be have to search the most closer gyms (until 10km);
-- [x] Should be have to search the name gyms;
-- [x] Should be have to realized check-in in the gym;
-- [x] Should be have to validated user after the check-in;
-- [x] Should be have to create a gym;
+1. Install postgress in your computer.
+2. Config the envs using ```.env.example```.
+3. run the command ```npx prisma migrate dev```.
+    3.1. If you don't have the prisma folder run ```npx prisma generate```.
+4. install the node_modules ```npm i | npm install | yarn (not recommend )```.
+5. run the command ```npm run dev-local```.
 
-## RNs
+The correct way to start this project is ```docker compose up --build | docker-compose up --buld```
 
-- [x] the user does not have to be created with a e-mail duplicated;
-- [x] the users does not to have to do 2 check-ins in same day;
-- [X] the user does not to have to do a check-in if it does not closed (100m) to the gym;
-- [ ] the check-in does only be validated after 20 minutes of created;
-- [ ] the check-in does only be validated for one admin;
-- [ ] the gym only be created for one admin;
 
-## RNFs
+## testing 
 
-- [x] the password has to be crypty;
-- [x] the data has to be persist into database PostgresSQL;
-- [x] every lists of data has to be page of 20 items for page;
-- [x] the user has to be identificate in one JWT
+The test is a simple command already configured into *package.json* 
+1. For unity test ```npm run test```.
+2. For E2E test ```npm run test:e2e```.
+
+Remember has another options into *package.json* for run this test, if you run *test:e2e:covarage*, any modification in `prisma/vitest-environment-prisma` you have to do npm link into the project manually.
