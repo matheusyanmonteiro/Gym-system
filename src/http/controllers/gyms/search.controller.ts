@@ -13,7 +13,7 @@ export async function searchController (request:FastifyRequest, reply:FastifyRep
 
     const { 
         query,
-        page, } = searchGymsQuerySchema.parse(request.body);
+        page, } = searchGymsQuerySchema.parse(request.query);
 
    
     const searchGymsService = MakeSearchGymsService();

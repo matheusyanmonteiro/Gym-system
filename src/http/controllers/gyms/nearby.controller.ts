@@ -17,7 +17,7 @@ export async function nearByController (request:FastifyRequest, reply:FastifyRep
 
     const { 
         latitude,
-        longitude, } = nearByGymsQuerySchema.parse(request.body);
+        longitude, } = nearByGymsQuerySchema.parse(request.query);
 
    
     const fetchNearByGymsService = MakeFetchNearByGymsService();
