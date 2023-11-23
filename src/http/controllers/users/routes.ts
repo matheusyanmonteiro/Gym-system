@@ -5,7 +5,7 @@ import { profileController } from './profile.controller';
 import { verifyJWT } from '../../hooks/verifyJwt';
 
 
-export async function gymRoutes(app: FastifyInstance) {
+export async function usersRoutes(app: FastifyInstance) {
 
     app.post('/users', registerController);
     app.post('/sessions', authenticateController);
