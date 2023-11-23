@@ -8,7 +8,7 @@ export async function gymsRoutes(app: FastifyInstance) {
     app.addHook('onRequest', verifyJWT);
 
     app.get('/gyms/search', searchController);
-    app.get('/gym/nearby', nearByController);
+    app.get('/gyms/nearby', nearByController);
 
     app.post('/gyms',createController);
 }
