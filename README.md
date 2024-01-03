@@ -23,3 +23,6 @@ The test is a simple command already configured into *package.json*
 2. For E2E test ```npm run test:e2e```.
 
 Remember has another options into *package.json* for run this test, if you run *test:e2e:covarage*, any modification in `prisma/vitest-environment-prisma` you have to do npm link into the project manually.
+
+
+## for ci 
